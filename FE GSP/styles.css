@@ -1,0 +1,120 @@
+body {
+    background-color: #e6e6e6;
+}
+#emailWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#emailInput {
+    width: 250px;
+    height: 20px;
+    margin-left: 38px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: gray;
+    padding: 11px;
+    padding-left: 13px;
+    outline: none;
+}
+#passwordWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 25px;
+}
+#passwordInput {
+    width: 250px;
+    height: 20px;
+    margin-left: 15px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: gray;
+    padding: 11px;
+    padding-left: 13px;
+    outline: none;
+}
+#registerWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#btnLogin {
+    background-color: #66ffff;
+    width: 352px;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 20px;
+}
+#loginText {
+    color: white;
+    font-weight: bold;
+}
+#box {
+    background-color: white;
+    width: 450px;
+    height: 435px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.fas fa-envelope {
+    width: 3em;
+    height: 3em;
+    font-size: 3em;
+}
+#passwordWrapper {
+    justify-content: center;
+}
+#emailWrapper {
+    justify-content: center;
+}
+#registerWrapper {
+    justify-content: flex-end;
+    margin-right: 55px;
+    margin-top: 5px;
+}
+#registerText {
+    color: blue;
+    cursor: pointer;
+}
+#donotRegisterText {
+    margin-right: 10px;
+}
+#orText {
+    margin-top: 10px;
+    color: gray;
+}
+#btnFacebookLogin {
+    background-color: #3b5998;
+    width: 352px;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 10px;
+}
+#btnGoogleLogin {
+    background-color: #e60000;
+    width: 352px;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 10px;
+}
+#facebookText {
+    color: white;
+    font-weight: bold;
+}
+#googleText {
+    color: white;
+    font-weight: bold;
+}
