@@ -18,7 +18,7 @@ $(function () {
     $(document).on("click keyup change", '[data-action]', function (event) {
         if (event.type == 'click') {
             var action = event.target.getAttribute('data-action');
-            if (action == "Login") {debugger
+            if (action == "Login") {
                 SecurityController.login();
             }
             else if (action == "Logout") {
@@ -26,7 +26,6 @@ $(function () {
             }
         }
         else if (event.type == 'keyup') {
-            debugger
             $('#tblAdmin').html(AdminController.loadAdminList(SearchData(json_data, this.value)));
         }
     });
