@@ -5,11 +5,22 @@ var json_data = [
     { "email": "admin1@tech3s-mentor.com", "firstName": "AdminF4", "lastName": "L", "phone": "+84909123455" }
 ];
 
-function SearchData(data, keyWord) {
-    var result = [];
-    data.forEach(e => {
-        if (e.firstName.indexOf(keyWord) >= 0) result.push(e);
-    })
+$(function () {
+    $('#tblAdmin').html(AdminController.loadAdminList(json_data));
 
-    return result;
-}
+    $(document).on("click keyup change", '[data-action]', function (event) {
+        if (event.type == 'click') {
+            var action = event.target.getAttribute('data-action')
+            if (action == "Home") {
+                NavigationController.onHome();
+            }
+            else if (action == "Admin") {
+                NavigationController.onAdmin();
+            }
+        }
+        else if (event.type == 'keyup') {
+            var lst = AdminController.search(json_data, this.value);
+            $('#tblAdmin').html(AdminController.loadAdminList(lst));
+        }
+    });
+});
