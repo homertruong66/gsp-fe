@@ -1,8 +1,8 @@
 var json_data = [
     { "email": "admin1@tech3s-mentor.com", "firstName": "AdminF1", "lastName": "L", "phone": "+84909123452" },
-    { "email": "admin1@tech3s-mentor.com", "firstName": "AdminF2", "lastName": "L", "phone": "+84909123453" },
-    { "email": "admin1@tech3s-mentor.com", "firstName": "AdminF3", "lastName": "L", "phone": "+84909123454" },
-    { "email": "admin1@tech3s-mentor.com", "firstName": "AdminF4", "lastName": "L", "phone": "+84909123455" }
+    { "email": "admin2@tech3s-mentor.com", "firstName": "AdminF2", "lastName": "L", "phone": "+84909123453" },
+    { "email": "admin3@tech3s-mentor.com", "firstName": "AdminF3", "lastName": "L", "phone": "+84909123454" },
+    { "email": "admin4@tech3s-mentor.com", "firstName": "AdminF4", "lastName": "L", "phone": "+84909123455" }
 ];
 
 $(function () {
