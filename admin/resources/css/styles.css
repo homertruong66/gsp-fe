@@ -1,4 +1,5 @@
 @import "admins.css";
+@import "login.css";
 
 * {
     padding: 0px;
@@ -25,7 +26,12 @@ html {
     margin-left: 15px;
 }
 
-body {
+/* #page {
+    display: flex;
+    flex-flow: row wrap;
+} */
+
+#fullpage {
     display: flex;
     flex-flow: row wrap;
 }

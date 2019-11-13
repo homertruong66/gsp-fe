@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="stylesheet" type="text/css" href="vendors/css/all.css">
     <link rel="stylesheet" type="text/css" href="resources/css/styles.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="resources/js/site.js"></script>
+    <script src="resources/js/controller/SecurityController.js"></script>
     <script src="resources/js/controller/NavigationController.js"></script>
     <script src="resources/js/controller/AdminController.js"></script>
 
@@ -17,98 +19,135 @@
 </head>
 
 <body>
-    <div class="nav-bar">
-        <fieldset>
-            <ul>
-                <li>
-                    <a href="#" data-action="Home" data-controller="NavigationController">Home</a>
-                </li>
-                <li>
-                    <a href="#" data-action="Admin" data-controller="NavigationController">Admins</a>
-                </li>
-                <li>
-                    <a href="#" data-action="Member" data-controller="NavigationController">Members</a>
-                </li>
-            </ul>
-        </fieldset>
+    <div id="login" class="section active">
+        <div id="box">
+            <h1 id="hello">LOGIN TO GSP GROUP</h1>
+            <div id="emailWrapper">
+                <div id="emailText">Email</div>
+                <input id="emailInput" placeholder="Please enter your Email" type="text" style="font-size:15px;" />
+            </div>
+            <div id="passwordWrapper">
+                <div id="passwordText">Password</div>
+                <input id="passwordInput" placeholder="Please enter your password" type="password"
+                    style="font-size:15px;" />
+            </div>
+            <div id="registerWrapper">
+                <div id="donotRegisterText">Don't have an account?</div>
+                <div id="registerText">Register now</div>
+            </div>
+            <button id="btnLogin" data-action="Login" data-controller="SecurityController">
+                <!-- <div id="loginText">LOGIN</div> -->
+                LOGIN
+            </button>
+            <div id="orText">Or, login with</div>
+            <button id="btnFacebookLogin">
+                <div id="facebookText">FACEBOOK</div>
+            </button>
+            <br>
+            <button id="btnGoogleLogin">
+                <div id="googleText">GOOGLE</div>
+            </button>
+        </div>
     </div>
-    <div class="container">
-        <div id="home" class="section active">
-            <h2>GSP Homepage</h2>
-        </div>
-        <div id="admin" class="section">
-            <div id="admins-manager">
+    <div id="page" class="section">
+        <div id="fullpage">
+            <div class="nav-bar">
                 <fieldset>
-                    <legend class="mg-left-15px">Admin Management</legend>
-                    <div class="mg-top-15px mg-left-15px">
-                        <label>Search:</label><input type="text" class="mg-left-15px" data-action="Search"
-                            data-controller="AdminController">
-                    </div>
-                    <div class="mg-top-15px mg-left-15px">
-                        <table id="tblAdmin"></table>
-                    </div>
-                    <div class="mg-top-15px mg-left-15px">
-                        <button data-action="First" data-controller="AdminController">First</button>
-                        <button data-action="Previous" data-controller="AdminController">Previous</button>
-                        Current Page:<input type="text" class="current-page-width" value="1" data-action="CurrentPage"
-                            data-controller="AdminController">
-                        / <span id="total-page">1</span>
-                        | Page Size:
-                        <select id="page-size" data-action="ChangePageSize" data-controller="AdminController">
-                            <option value="4">4</option>
-                            <option value="8">8</option>
-                            <option value="16">16</option>
-                            <option value="32">32</option>
-                        </select>
-                        <button data-action="Next" data-controller="AdminController">Next</button>
-                        <button data-action="Last" data-controller="AdminController">Last</button>
-                    </div>
-                    <div class="mg-top-15px mg-bottom-15px mg-left-15px">
-                        <button data-action="Create" data-controller="AdminController">New</button>
-                    </div>
+                    <ul>
+                        <li>
+                            <a href="#" data-action="Home" data-controller="NavigationController">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" data-action="Admin" data-controller="NavigationController">Admins</a>
+                        </li>
+                        <li>
+                            <a href="#" data-action="Member" data-controller="NavigationController">Members</a>
+                        </li>
+                        <li>
+                            <a href="#" data-action="Logout" data-controller="SecurityController">Logout</a>
+                        </li>
+                    </ul>
                 </fieldset>
             </div>
-            <div id="admins-edit">
-                <fieldset>
-                    <legend class="mg-left-15px">Admin Edit</legend>
-                    <table class="mg-top-15px mg-left-15px">
-                        <tr>
-                            <td class="lable-info">Email:</td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td class="lable-info">Comfirmed Email:</td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td class="lable-info">Password:</td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td class="lable-info">Comfirmed Password:</td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td class="lable-info">First Name:</td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td class="lable-info">Last Name:</td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td class="lable-info">Phone:</td>
-                            <td><input type="text"></td>
-                        </tr>
-                    </table>
-                    <div class="mg-top-15px mg-bottom-15px mg-left-15px">
-                        <button data-action="Save" data-controller="AdminController">Save</button>
-                        <button data-action="Cancel" data-controller="AdminController">Cancel</button>
+            <div class="container">
+                <div id="home" class="section active">
+                    <h2>GSP Homepage</h2>
+                </div>
+                <div id="admin" class="section">
+                    <div id="admins-manager">
+                        <fieldset>
+                            <legend class="mg-left-15px">Admin Management</legend>
+                            <div class="mg-top-15px mg-left-15px">
+                                <label>Search:</label><input type="text" class="mg-left-15px" data-action="Search"
+                                    data-controller="AdminController">
+                            </div>
+                            <div class="mg-top-15px mg-left-15px">
+                                <table id="tblAdmin"></table>
+                            </div>
+                            <div class="mg-top-15px mg-left-15px">
+                                <button data-action="First" data-controller="AdminController">First</button>
+                                <button data-action="Previous" data-controller="AdminController">Previous</button>
+                                Current Page:<input type="text" class="current-page-width" value="1"
+                                    data-action="CurrentPage" data-controller="AdminController">
+                                / <span id="total-page">1</span>
+                                | Page Size:
+                                <select id="page-size" data-action="ChangePageSize" data-controller="AdminController">
+                                    <option value="4">4</option>
+                                    <option value="8">8</option>
+                                    <option value="16">16</option>
+                                    <option value="32">32</option>
+                                </select>
+                                <button data-action="Next" data-controller="AdminController">Next</button>
+                                <button data-action="Last" data-controller="AdminController">Last</button>
+                            </div>
+                            <div class="mg-top-15px mg-bottom-15px mg-left-15px">
+                                <button data-action="Create" data-controller="AdminController">New</button>
+                            </div>
+                        </fieldset>
                     </div>
-                </fieldset>
+                    <div id="admins-edit">
+                        <fieldset>
+                            <legend class="mg-left-15px">Admin Edit</legend>
+                            <table class="mg-top-15px mg-left-15px">
+                                <tr>
+                                    <td class="lable-info">Email:</td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td class="lable-info">Comfirmed Email:</td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td class="lable-info">Password:</td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td class="lable-info">Comfirmed Password:</td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td class="lable-info">First Name:</td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td class="lable-info">Last Name:</td>
+                                    <td><input type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td class="lable-info">Phone:</td>
+                                    <td><input type="text"></td>
+                                </tr>
+                            </table>
+                            <div class="mg-top-15px mg-bottom-15px mg-left-15px">
+                                <button data-action="Save" data-controller="AdminController">Save</button>
+                                <button data-action="Cancel" data-controller="AdminController">Cancel</button>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div id="member" class="section"></div>
             </div>
         </div>
-        <div id="member" class="section"></div>
     </div>
 </body>
 <!-- <div class="nav-bar">
