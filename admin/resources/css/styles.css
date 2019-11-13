@@ -1,3 +1,6 @@
+@import "admins.css";
+@import "login.css";
+
 * {
     padding: 0px;
     margin: 0px;
@@ -23,7 +26,12 @@ html {
     margin-left: 15px;
 }
 
-body.admin-view {
+/* #page {
+    display: flex;
+    flex-flow: row wrap;
+} */
+
+#fullpage {
     display: flex;
     flex-flow: row wrap;
 }
@@ -33,7 +41,15 @@ body.admin-view {
     margin-right: 1%;
 }
 
-.content {
+.section {
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
+.container {
     width: 85%;
 }
 

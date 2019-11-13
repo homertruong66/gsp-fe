@@ -18,7 +18,12 @@ var AdminController = {
         return result;
     },
 
-    search: function () {
-        debugger
+    search: function (data, keyWord) {
+        var result = [];
+        data.forEach(e => {
+            if (e.firstName.indexOf(keyWord) >= 0) result.push(e);
+        })
+
+        return result;
     }
 }

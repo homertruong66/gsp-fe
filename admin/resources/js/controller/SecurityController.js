@@ -3,11 +3,12 @@ var SecurityController = {
 
     // Methods
     login: function () {
-        window.location.href = "index.html";
+        $('#login').removeClass('active');
+        $('#page').addClass('active');
     },
 
     logout: function () {
-        window.location.href = "login.html";
-        return;
+        $('#login').addClass('active');
+        $('#page').removeClass('active');
     }
 }
