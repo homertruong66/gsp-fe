@@ -10,26 +10,12 @@ $(function () {
 
     $(document).on("click keyup change", '[data-action]', function (event) {
         if (event.type == 'click') {
-            var controller = event.target.getAttribute('data-controller');
             var action = event.target.getAttribute('data-action')
-            if (controller == "SecurityController") {
-                if (action == "Login") {
-                    SecurityController.login();
-                }
-                else if (action == "Logout") {
-                    SecurityController.logout();
-                }
+            if (action == "Home") {
+                NavigationController.onHome();
             }
-            else if (controller == "NavigationController") {
-                if (action == "Home") {
-                    NavigationController.onHome();
-                }
-                else if (action == "Admin") {
-                    NavigationController.onAdmin();
-                }
-            }
-            else if (controller == "AdminController") {
-
+            else if (action == "Admin") {
+                NavigationController.onAdmin();
             }
         }
         else if (event.type == 'keyup') {
