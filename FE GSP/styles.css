@@ -48,6 +48,8 @@ body {
     cursor: pointer;
     outline: none;
     margin-top: 20px;
+    color: white;
+    font-weight: bold;
 }
 #loginText {
     color: white;
@@ -99,6 +101,8 @@ body {
     cursor: pointer;
     outline: none;
     margin-top: 10px;
+    color: white;
+    font-weight: bold;
 }
 #btnGoogleLogin {
     background-color: #e60000;
@@ -109,6 +113,8 @@ body {
     cursor: pointer;
     outline: none;
     margin-top: 10px;
+    color: white;
+    font-weight: bold;
 }
 #facebookText {
     color: white;
