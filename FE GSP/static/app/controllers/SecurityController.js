@@ -1,7 +1,6 @@
 const SecurityController = {
     login: function(users) {
         if(email === users[0].email && password === users[0].password) {
-            console.log("Hello");
             $('.page.login-page').hide();
             $('.page.home-page').show();
         }
