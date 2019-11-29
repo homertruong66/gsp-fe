@@ -3,7 +3,18 @@ body {
 }
 .page {
     display: none;
+    width: 100%;
+    min-height: 100%;
 }
+.active {
+    display: block;
+}
+/* #login-page {
+    background-color: #e6e6e6;
+}
+#home-page {
+    background-color: red;
+} */
 #emailWrapper {
     display: flex;
     flex-direction: row;
