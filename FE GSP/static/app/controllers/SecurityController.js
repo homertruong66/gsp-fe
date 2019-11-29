@@ -4,8 +4,11 @@ const SecurityController = {
             $('.page.login-page').hide();
             $('.page.home-page').show();
         }
-        else {
-            alert("Your account is not correct!");
+        else if(email !== users[0].email && password !== users[0].password){
+            alert("Your email is not exist and password is not correct. Please check it again!");
+        }
+        else if(email === users[0].email && password !== users[0].password) {
+            alert("Your password is not correct. Please check it again!");
         }
     },
     logout: function() {
