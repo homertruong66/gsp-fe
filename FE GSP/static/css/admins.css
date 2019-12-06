@@ -18,3 +18,8 @@
 .lable-info {
     text-align: right;
 }
+
+#fullpage {
+    display: flex;
+    flex-direction: row;
+}
