@@ -17,7 +17,10 @@ const SecurityController = {
                 var data = JSON.stringify(data);
                 console.log(data);
                 //lay token tu BE tra ve
-
+                var tokenKey = globalObject.headerSecurityTokenKey;
+                var userProfileKey = globalObject.headerUserProfileKey;
+                localStorage[tokenKey] = jqXHR.getResponseHeader(tokenKey);
+                localStorage[userProfileKey] = jqXHR.getResponseHeader(userProfileKey);
                 //lay userInfo tu Be tra ve
 
                 //cho an hien form login
@@ -32,6 +35,12 @@ const SecurityController = {
     },
     logout: function() {
         //luu token và id vao localStorage
+        var headers = {};
+        headers[globalObject.headerSecurityTokenKey] = localStorage[globalObject.headerSecurityTokenKey];
+
+        // clear local token
+        localStorage.removeItem(globalObject.headerSecurityTokenKey);
+        localStorage.removeItem(globalObject.headerAdminProfileKey);
 
         //xoa token, id va userInfo
         
