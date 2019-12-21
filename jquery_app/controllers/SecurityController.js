@@ -1,16 +1,54 @@
 const SecurityController = {
-    login: function(users) {
-        if(email === users[0].email && password === users[0].password) {
-            $('.page.login-page').hide();
-            $('.page.home-page').show();
+    login: function(username, password) {
+        const data = {
+            username: username,
+            password: password
         }
-        else {
-            alert("Your account is not correct!");
-        }
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:8080/login',
+            dataType: 'text',
+            contentType: 'text/plain',
+            data: {
+                username: username,
+                password: password
+            },
+            success: function(data, responseText, jqXHR) {
+                var data = JSON.stringify(data);
+                console.log(data);
+                //lay token tu BE tra ve
+
+                //lay userInfo tu Be tra ve
+
+                //cho an hien form login
+                $('#login').removeClass('active');
+                $('#page').addClass('active');
+            },
+            error: function(data, responseText, jqXHR) {
+                //bao loi
+                alert(responseText);
+            }
+        })
     },
     logout: function() {
-        $('.page.home-page').hide();
-        $('.page.login-page').show();
-        $('#box')[0].reset();
+        //luu token và id vao localStorage
+
+        //xoa token, id va userInfo
+        
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:8080/login',
+            dataType: 'text',
+            contentType: 'text/plain',
+            success: function(data, responseText, jqXHR) {
+                $('#page').removeClass('active');
+                $('#login').addClass('active');
+                $('#box')[0].reset();
+            },
+            error: function(data, responseText, jqXHR) {
+                //bao loi
+            }
+        }) 
+        
     }
 }

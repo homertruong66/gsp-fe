@@ -1,20 +1,16 @@
-body {
-    background-color: #e6e6e6;
+#login {
+    background-color: #e6e6e6;  
+    height: 100vh;
 }
-.page {
-    display: none;
-    width: 100%;
-    min-height: 100%;
-}
+
 .active {
     display: block;
 }
-/* #login-page {
-    background-color: #e6e6e6;
+
+.inactive {
+    display: none;
 }
-#home-page {
-    background-color: red;
-} */
+
 #emailWrapper {
     display: flex;
     flex-direction: row;
