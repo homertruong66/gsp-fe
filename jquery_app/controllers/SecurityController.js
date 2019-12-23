@@ -8,8 +8,8 @@ const SecurityController = {
             type: 'POST',
             url: 'http://localhost:8080/login',
             dataType: 'JSON',
-            contentType: 'text/plain',
-            data: data,
+            contentType: 'application/json',
+            data: JSON.stringify(data),
             success: function(data, responseText, jqXHR) {
                 var data = JSON.stringify(data);
                 console.log(data);
