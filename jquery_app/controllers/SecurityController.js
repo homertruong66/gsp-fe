@@ -7,12 +7,9 @@ const SecurityController = {
         $.ajax({
             type: 'POST',
             url: 'http://localhost:8080/login',
-            dataType: 'text',
+            dataType: 'JSON',
             contentType: 'text/plain',
-            data: {
-                username: username,
-                password: password
-            },
+            data: data,
             success: function(data, responseText, jqXHR) {
                 var data = JSON.stringify(data);
                 console.log(data);
