@@ -131,6 +131,14 @@
                                                     <th scope="col">Phone</th>
                                                 </tr>
                                             </thead>
+                                            <tbody>
+                                                <tr th:each="user: ${json_data}">
+                                                    <td th:text="${user.id}"></td>
+                                                    <td th:text="${user.email}"></td>
+                                                    <td th:text="${user.firstName} ${user.lastName}"></td>
+                                                    <td th:text="${user.phone}"></td>
+                                                </tr>
+                                            </tbody>
                                         </table>
                                     </div>
                                     <div class="mg-top-15px mg-left-15px">
