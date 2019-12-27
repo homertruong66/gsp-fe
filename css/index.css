@@ -1,10 +1,6 @@
-@import "admins.css";
-
-/* * {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-} */
+html, body {
+    margin: 0%;
+}
 
 .body2 {
     font-size: 20px;
@@ -24,11 +20,6 @@
 
 .mg-left-15px {
     margin-left: 15px;
-}
-
-body {
-    display: flex;
-    flex-flow: row wrap;
 }
 
 .nav-bar {

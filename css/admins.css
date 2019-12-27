@@ -18,3 +18,17 @@
 .lable-info {
     text-align: right;
 }
+
+#fullpage {
+    display: flex;
+    flex-direction: row;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+}
+
+#btnChangePassword {
+    margin-left: 737px;
+}

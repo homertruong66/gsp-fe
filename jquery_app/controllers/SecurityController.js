@@ -1,16 +1,64 @@
 const SecurityController = {
-    login: function(users) {
-        if(email === users[0].email && password === users[0].password) {
-            $('.page.login-page').hide();
-            $('.page.home-page').show();
-        }
-        else {
-            alert("Your account is not correct!");
-        }
+    login: function(username, password) {
+        // const data = {
+        //     username: username,
+        //     password: password
+        // }
+        // $.ajax({
+        //     type: 'POST',
+        //     url: 'http://localhost:8080/login',
+        //     dataType: 'JSON',
+        //     contentType: 'application/json',
+        //     data: JSON.stringify(data),
+        //     success: function(data, responseText, jqXHR) {
+        //         var data = JSON.stringify(data);
+        //         console.log(data);
+        //         //lay token tu BE tra ve
+        //         var tokenKey = globalObject.headerSecurityTokenKey;
+        //         var userProfileKey = globalObject.headerUserProfileKey;
+        //         localStorage[tokenKey] = jqXHR.getResponseHeader(tokenKey);
+        //         localStorage[userProfileKey] = jqXHR.getResponseHeader(userProfileKey);
+        //         //lay userInfo tu Be tra ve
+
+        //         //cho an hien form login
+        //         $('#login').removeClass('active');
+        //         $('#page').addClass('active');
+        //     },
+        //     error: function(data, responseText, jqXHR) {
+        //         //bao loi
+        //         alert(responseText);
+        //     }
+        // });
+        $('#login').removeClass('active');
+        $('#page').addClass('active');
     },
     logout: function() {
-        $('.page.home-page').hide();
-        $('.page.login-page').show();
+        // //luu token và id vao localStorage
+        // var headers = {};
+        // headers[globalObject.headerSecurityTokenKey] = localStorage[globalObject.headerSecurityTokenKey];
+
+        // // clear local token
+        // localStorage.removeItem(globalObject.headerSecurityTokenKey);
+        // localStorage.removeItem(globalObject.headerAdminProfileKey);
+
+        // //xoa token, id va userInfo
+        
+        // $.ajax({
+        //     type: 'POST',
+        //     url: 'http://localhost:8080/login',
+        //     dataType: 'JSON',
+        //     contentType: 'application/json',
+        //     success: function(data, responseText, jqXHR) {
+        //         $('#page').removeClass('active');
+        //         $('#login').addClass('active');
+        //         $('#box')[0].reset();
+        //     },
+        //     error: function(data, responseText, jqXHR) {
+        //         //bao loi
+        //     }
+        // }) 
+        $('#page').removeClass('active');
+        $('#login').addClass('active');
         $('#box')[0].reset();
     }
 }
