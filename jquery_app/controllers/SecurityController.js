@@ -1,34 +1,36 @@
 const SecurityController = {
     login: function(username, password) {
-        // const data = {
-        //     username: username,
-        //     password: password
-        // }
-        // $.ajax({
-        //     type: 'POST',
-        //     url: 'http://localhost:8080/login',
-        //     dataType: 'JSON',
-        //     contentType: 'application/json',
-        //     data: JSON.stringify(data),
-        //     success: function(data, responseText, jqXHR) {
-        //         var data = JSON.stringify(data);
-        //         console.log(data);
-        //         //lay token tu BE tra ve
-        //         var tokenKey = globalObject.headerSecurityTokenKey;
-        //         var userProfileKey = globalObject.headerUserProfileKey;
-        //         localStorage[tokenKey] = jqXHR.getResponseHeader(tokenKey);
-        //         localStorage[userProfileKey] = jqXHR.getResponseHeader(userProfileKey);
-        //         //lay userInfo tu Be tra ve
+        const data = {
+            username: username,
+            password: password
+        }
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:8080/login',
+            dataType: 'JSON',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            crossDomain: true,
+            crossOrigin: true,
+            success: function(data, responseText, jqXHR) {
+                var data = JSON.stringify(data);
+                console.log(data);
+                //lay token tu BE tra ve
+                var tokenKey = globalObject.headerSecurityTokenKey;
+                var userProfileKey = globalObject.headerUserProfileKey;
+                localStorage[tokenKey] = jqXHR.getResponseHeader(tokenKey);
+                localStorage[userProfileKey] = jqXHR.getResponseHeader(userProfileKey);
+                //lay userInfo tu Be tra ve
 
-        //         //cho an hien form login
-        //         $('#login').removeClass('active');
-        //         $('#page').addClass('active');
-        //     },
-        //     error: function(data, responseText, jqXHR) {
-        //         //bao loi
-        //         alert(responseText);
-        //     }
-        // });
+                //cho an hien form login
+                $('#login').removeClass('active');
+                $('#page').addClass('active');
+            },
+            error: function(data, responseText, jqXHR) {
+                //bao loi
+                alert(responseText);
+            }
+        });
         $('#login').removeClass('active');
         $('#page').addClass('active');
     },
